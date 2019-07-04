@@ -83,6 +83,7 @@ class block_superframe extends block_base {
 
         return $this->content;
     }
+    
     /**
      * This is a list of places where the block may or
      * may not be added.
@@ -94,11 +95,20 @@ class block_superframe extends block_base {
                      'course-view' => true,
                      'my' => true);
     }
+    
     /**
      * Allow multiple instances of the block.
      */
     function instance_allow_multiple() {
         return true;
     }
+    
+    /**
+     * Allow block configuration.
+     */
+    function has_config() {
+        return true;
+    }
+    
 
 }
