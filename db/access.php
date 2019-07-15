@@ -43,6 +43,7 @@ $capabilities = array(
 
         'clonepermissionsfrom' => 'moodle/my:manageblocks'
     ),
+		
     // Specified user can add to courses etc.
     'block/superframe:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
@@ -56,4 +57,17 @@ $capabilities = array(
 
         'clonepermissionsfrom' => 'moodle/site:manageblocks'
     ),
+		
+	// Restrict access to view page.
+	'block/superframe:seeeviewpage' => array(
+			'captype' => 'read',
+			'contextlevel' => CONTEXT_USER,
+			'archetypes' => array(
+					'editingteacher' => CAP_ALLOW,
+					'manager' => CAP_ALLOW,
+					'studente' => CAP_PREVENT,
+					'guest' => CAP_PREVENT
+			),
+			'clonepermissionsfrom' => 'moodle/site:manageblocks'
+	)
 );
