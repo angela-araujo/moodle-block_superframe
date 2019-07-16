@@ -80,7 +80,8 @@ class block_superframe extends block_base {
         //$this->content->text .= '<br><i>'.get_string('message', 'block_superframe').'</i>';
         
         // Check user permission to see the view page.
-        $usercontext = context_instance::$USER->id;
+        //$usercontext = context_instance::$USER->id;
+        $usercontext = context_user::instance($USER->id);
         
         if (has_capability('block/superframe:seeviewpage', $usercontext)) {
         	
