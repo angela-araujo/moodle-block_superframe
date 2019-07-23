@@ -9,18 +9,18 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle. If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Strings for component 'block_superframe', language 'en'
  *
- * @package   block_superframe
- * @copyright  Daniel Neis <danielneis@gmail.com>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package block_superframe
+ * @copyright Daniel Neis <danielneis@gmail.com>
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
@@ -31,31 +31,30 @@
  */
 
 // General.
-$string['pluginname'] = 'Super frame';
-$string['welcomeuser'] = 'Welcome {$a->firstname} {$a->lastname}';
-$string['viewlink'] = 'View page';
+$string ['pluginname'] = 'Super frame';
+$string ['welcomeuser'] = 'Welcome {$a->firstname} {$a->lastname}';
+$string ['viewlink'] = 'View page';
 
 // Admin settings file.
-$string['headerconfig'] = 'Super frame settings';
-$string['headerconfigdesc'] = 'Settings for Super frame';
-$string['url'] = 'url';
-$string['url_details'] = 'Url to display';
-$string['height'] = 'Height';
-$string['height_details'] = 'Height of the frame (px)';
-$string['width'] = 'Width';
-$string['width_details'] = 'Width of the frame (px)';
-$string['pagelayout'] = 'Page layout';
-$string['pagelayout_details'] = 'Select a preferred page layout';
-
+$string ['headerconfig'] = 'Super frame settings';
+$string ['headerconfigdesc'] = 'Settings for Super frame';
+$string ['url'] = 'url';
+$string ['url_details'] = 'Url to display';
+$string ['height'] = 'Height';
+$string ['height_details'] = 'Height of the frame (px)';
+$string ['width'] = 'Width';
+$string ['width_details'] = 'Width of the frame (px)';
+$string ['pagelayout'] = 'Page layout';
+$string ['pagelayout_details'] = 'Select a preferred page layout';
 
 // Capability strings.
-$string['superframe:addinstance'] = 'Add a new Super frame block';
-$string['superframe:myaddinstance'] = 'Add a new Super frame block to my moodle';
-$string['superframe:seeviewpage'] = 'View the link to the view page in the block';
+$string ['superframe:addinstance'] = 'Add a new Super frame block';
+$string ['superframe:myaddinstance'] = 'Add a new Super frame block to my moodle';
+$string ['superframe:seeviewpage'] = 'View the link to the view page in the block';
 
 // Settings instance.
-$string['size'] = 'Select a size for your iframe';
-$string['custom'] = 'Custom';
-$string['small'] = 'Small';
-$string['medium'] = 'Medium';
-$string['large'] = 'Large';
+$string ['size'] = 'Select a size for your iframe';
+$string ['custom'] = 'Custom';
+$string ['small'] = 'Small';
+$string ['medium'] = 'Medium';
+$string ['large'] = 'Large';

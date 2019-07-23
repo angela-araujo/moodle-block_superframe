@@ -8,18 +8,18 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle. If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * block_superframe capabilities/permissions
  *
- * @package   block_superframe
- * @copyright  Daniel Neis <danielneis@gmail.com>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package block_superframe
+ * @copyright Daniel Neis <danielneis@gmail.com>
+ * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
@@ -28,47 +28,46 @@
  *
  * See: https://www.moodlebites.com/mod/page/view.php?id=24546
  */
+defined ( 'MOODLE_INTERNAL' ) || die ();
 
-defined('MOODLE_INTERNAL') || die();
+$capabilities = array (
 
-$capabilities = array(
+        // User can add to Dashboard.
+        'block/superframe:myaddinstance' => array (
+                'captype' => 'write',
+                'contextlevel' => CONTEXT_SYSTEM,
+                'archetypes' => array (
+                        'user' => CAP_ALLOW
+                ),
 
-    //User can add to Dashboard.
-    'block/superframe:myaddinstance' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_SYSTEM,
-        'archetypes' => array(
-            'user' => CAP_ALLOW
+                'clonepermissionsfrom' => 'moodle/my:manageblocks'
         ),
 
-        'clonepermissionsfrom' => 'moodle/my:manageblocks'
-    ),
-		
-    // Specified user can add to courses etc.
-    'block/superframe:addinstance' => array(
-        'riskbitmask' => RISK_SPAM | RISK_XSS,
+        // Specified user can add to courses etc.
+        'block/superframe:addinstance' => array (
+                'riskbitmask' => RISK_SPAM | RISK_XSS,
 
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_BLOCK,
-        'archetypes' => array(
-            'editingteacher' => CAP_ALLOW,
-            'manager' => CAP_ALLOW
+                'captype' => 'write',
+                'contextlevel' => CONTEXT_BLOCK,
+                'archetypes' => array (
+                        'editingteacher' => CAP_ALLOW,
+                        'manager' => CAP_ALLOW
+                ),
+
+                'clonepermissionsfrom' => 'moodle/site:manageblocks'
         ),
 
-        'clonepermissionsfrom' => 'moodle/site:manageblocks'
-    ),
-		
-	// Restrict access to view page.
-	'block/superframe:seeviewpage' => array(
-			'captype' => 'read',
-			'contextlevel' => CONTEXT_USER,
-			'archetypes' => array(
-					'editingteacher' => CAP_ALLOW,
-					'teacher' => CAP_ALLOW,
-					'manager' => CAP_ALLOW,
-					'student' => CAP_PREVENT,
-					'guest' => CAP_PREVENT
-			),
-			'clonepermissionsfrom' => 'moodle/site:manageblocks'
-	)
+        // Restrict access to view page.
+        'block/superframe:seeviewpage' => array (
+                'captype' => 'read',
+                'contextlevel' => CONTEXT_USER,
+                'archetypes' => array (
+                        'editingteacher' => CAP_ALLOW,
+                        'teacher' => CAP_ALLOW,
+                        'manager' => CAP_ALLOW,
+                        'student' => CAP_PREVENT,
+                        'guest' => CAP_PREVENT
+                ),
+                'clonepermissionsfrom' => 'moodle/site:manageblocks'
+        )
 );
