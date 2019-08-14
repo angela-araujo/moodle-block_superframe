@@ -36,6 +36,12 @@ $string ['welcomeuser'] = 'Welcome {$a->firstname} {$a->lastname}';
 $string ['viewlink'] = 'View page';
 
 $string ['returncourse'] = 'Return to course';
+$string ['poplink'] = 'Link to popup';
+$string ['tablecaption'] = 'Block instances by course';
+$string ['blockid'] = 'ID';
+$string ['blockname'] = 'Block name';
+$string ['course'] = 'Course';
+$string ['catname'] = 'Category';
 
 // Admin settings file.
 $string ['headerconfig'] = 'Super frame settings';

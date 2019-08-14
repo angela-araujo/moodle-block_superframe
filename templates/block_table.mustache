@@ -12,26 +12,42 @@
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with Moodle.  If not, see .
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 
 {{!
-    @template block_superiframe/block
+    @template block_superiframe/block_table
 
     This template renders a url in an iframe of given size.
 
     Example context (json):
     {
-        "welcome": "My superframe",
-        "url": "#",
-        "text": "my link"
-    }
+    tableheaders: [heading 1, heading 2]
+    tabledata: [ [item1row 1, item2row 1], [item2row1, item2row2] ]
+}
 }}
 
-<div>
-	<h3>{{welcome}}</h3>
-	<ul>
-        <li><a href="{{{url}}}">{{text}}</a></li>
-        <li><a href={{{popurl}}} target="_blank"> {{poptext}}</li>
-    </ul>
+<div class="table-responsive">
+	<table class="table table-striped">
+		{{! Using a get_string helper }}
+		<caption>
+			{{# str }} tablecaption, block_superframe {{/ str }}
+		</caption>
+		<thead> 
+			{{#tableheaders}}
+				<th>{{.}}</th>
+			{{/tableheaders}}
+		</thead>
+		<tbody>
+			{{! Iterate through the array of data rows }}
+			{{#tabledata}}
+				<tr>
+					{{#.}}
+						<td>{{.}}</td>
+					{{/.}}
+				</tr>
+			{{/tabledata}}
+		</tbody>
+	</table>
 </div>
+		
