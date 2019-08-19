@@ -63,6 +63,10 @@ class block_superframe_renderer extends plugin_renderer_base {
         $data->popurl = new moodle_url('/blocks/superframe/block_data.php');
         $data->poptext = get_string('poplink', 'block_superframe');
         
+        // Add a link to table manager.
+        $data->tableurl = new moodle_url('/blocks/superframe/tablemanager.php');
+        $data->tabletext = get_string('tablelink', 'block_superframe');
+        
         return $this->render_from_template('block_superframe/block', $data);
         
     }
