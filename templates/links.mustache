@@ -16,23 +16,30 @@
 }}
 
 {{!
-    @template block_superiframe/block
+    @template block_superiframe/links
 
     This template renders a url in an iframe of given size.
 
     Example context (json):
     {
-        "welcome": "My superframe",
-        "url": "#",
-        "text": "my link"
+        "class": ["link1", "link2"],
+        "linkdata": ["link1", "link2"],
+        "height": "400",
+        "width": "600",
+        "returnlink": "#",
+        "returntext": "Return to course"
     }
 }}
 
-<div>
-	<h3>{{welcome}}</h3>
-	<ul>
-        <li><a href="{{{url}}}">{{text}}</a></li>
-        <li><a href={{{popurl}}} target="_blank"> {{poptext}}</li>
-        <li><a href={{{tableurl}}} target="_blank"> {{tabletext}}</li>
-    </ul>
+<div class="{{class}}">
+	<div class="container">
+		<ul class="list-inline">
+			<li class="list-inline-item"><h4>{{name}}</h4></li><br />
+			{{#linkdata}}
+			<li class="list-inline-item">
+				<a href="{{{link}}}">{{text}}</a>
+			</li>
+			{{/linkdata}}
+		</ul>
+	</div>
 </div>
