@@ -45,6 +45,8 @@ $string ['blockname'] = 'Block name';
 $string ['course'] = 'Course';
 $string ['catname'] = 'Category';
 
+// Navigation API.
+$string['userlink'] = 'Installed blocks';
 
 // Admin settings file.
 $string ['headerconfig'] = 'Super frame settings';
