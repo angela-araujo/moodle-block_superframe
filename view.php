@@ -37,6 +37,11 @@ $PAGE->navbar->add(get_string('pluginname', 'block_superframe'));
 
 require_login();
 
+// If we get here they have viewed the page.
+// Log the page viewed event.
+$event = \block_superframe\event\block_page_viewed::create(['context' => $PAGE->context]);
+$event->trigger();
+
 $usercontext = context_user::instance($USER->id);
 require_capability('block/superframe:seeviewpage', $usercontext);
 

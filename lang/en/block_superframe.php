@@ -71,3 +71,6 @@ $string ['custom'] = 'custom';
 $string ['small'] = 'small';
 $string ['medium'] = 'medium';
 $string ['large'] = 'large';
+
+// Event log
+$string ['pageviewed'] = 'Page viewed';
