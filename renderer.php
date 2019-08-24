@@ -70,7 +70,7 @@ class block_superframe_renderer extends plugin_renderer_base {
     
     function fetch_block_content($blockid, $courseid) {
         
-        global $USER;
+        global $USER, $DB;
         $data = new stdClass();
         
         $data->welcome = get_string('welcomeuser', 'block_superframe', $USER);
@@ -84,6 +84,11 @@ class block_superframe_renderer extends plugin_renderer_base {
         // Add a link to table manager.
         $data->tableurl = new moodle_url('/blocks/superframe/tablemanager.php');
         $data->tabletext = get_string('tablelink', 'block_superframe');
+        
+        $access = $DB->get_record('user_lastaccess', ['courseid' => $courseid, 'userid' => $USER->id], '*', MUST_EXIST);
+
+        $data->lastaccesstime = $access->timeaccess;
+        //$data->strtimedate = get_string('strtimedate', 'blck_superframe');
         
         return $this->render_from_template('block_superframe/block_content', $data);
         

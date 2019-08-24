@@ -74,3 +74,4 @@ $string ['large'] = 'large';
 
 // Event log
 $string ['pageviewed'] = 'Page viewed';
+$string ['lastaccesslabel'] = 'Last access';
