@@ -37,14 +37,16 @@ defined('MOODLE_INTERNAL') || die();
 class block_data {
     public static function fetch_block_data() {
         global $DB;
-        $sql = "SELECT b.id, cat.id AS catid, cat.name AS catname,
-                b.blockname, c.shortname
-                FROM {context} x
-                JOIN {block_instances} b ON b.parentcontextid = x.id
-                JOIN {course} c ON c.id = x.instanceid
-                JOIN {course_categories} cat ON cat.id = c.category
-                WHERE x.contextlevel <= :clevel
-                ORDER BY b.blockname DESC";
+        $sql = "SELECT b.id, cat.id AS catid, cat.name AS catname, b.blockname, c.shortname
+                  FROM {context} x
+                  JOIN {block_instances} b 
+                    ON b.parentcontextid = x.id
+                  JOIN {course} c 
+                    ON c.id = x.instanceid
+                  JOIN {course_categories} cat 
+                    ON cat.id = c.category
+                 WHERE x.contextlevel <= :clevel
+              ORDER BY b.blockname DESC";
         return $DB->get_records_sql($sql, ['clevel' => 80]);
         
     }
